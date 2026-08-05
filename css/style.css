@@ -1,0 +1,218 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #111;
+  --paper: #fff;
+  --muted: #555;
+  --rule: #111;
+  --gap: 1.25rem;
+  --measure: 65ch;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  padding: var(--gap) 1.25rem;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.site-title a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.main {
+  padding: 1.75rem 1.25rem 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sidebar {
+  padding: 1.5rem 1.25rem 2.5rem;
+}
+
+.sidebar h2 {
+  margin: 0 0 1rem;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list li {
+  margin: 0;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.post-list li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.post-list a {
+  text-decoration: none;
+  display: block;
+}
+
+.post-list a:hover .post-list-title {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.post-list-date {
+  display: block;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.15rem;
+}
+
+.post-list-title {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.post-list .current {
+  border-left: 3px solid var(--rule);
+  padding-left: 0.65rem;
+  margin-left: -0.65rem;
+}
+
+.post-list .current .post-list-title {
+  font-weight: 700;
+}
+
+.article-title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  line-height: 1.2;
+  font-weight: 700;
+  max-width: var(--measure);
+}
+
+.article-meta {
+  margin: 0 0 1.75rem;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  max-width: var(--measure);
+}
+
+.article-body {
+  max-width: var(--measure);
+}
+
+.article-body > *:first-child {
+  margin-top: 0;
+}
+
+.article-body p {
+  margin: 0 0 1.15rem;
+}
+
+.article-body h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.article-body ul,
+.article-body ol {
+  margin: 0 0 1.15rem;
+  padding-left: 1.35rem;
+}
+
+.article-body li {
+  margin-bottom: 0.35rem;
+}
+
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.25rem;
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .layout {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: calc(100vh - 7rem);
+  }
+
+  .main {
+    flex: 1 1 66%;
+    border-bottom: none;
+    border-right: 1px solid var(--rule);
+    padding: 2.25rem 2rem 3rem;
+  }
+
+  .sidebar {
+    flex: 0 0 280px;
+    padding: 2.25rem 1.5rem 3rem;
+  }
+}

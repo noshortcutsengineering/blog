@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+.playwright-mcp/
+.cursor/
+*.swp
+*~
+AGENTS.md
+agents.md
+README.md
+readme.md
+
